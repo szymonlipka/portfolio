@@ -1,21 +1,14 @@
 <div class="container mx-auto">
-  <div class="fixed h-full w-1/6">
-    <a href="#education"
-       class="w-1/2 block font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
-      Education
-    </a>
-    <a href="#job-experience"
-       class="w-1/2 block font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
-      Job experience
-    </a>
-    <a href="#contributions"
-       class="w-1/2 block font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
-      Contributions
-    </a>
-    <a href="#articles"
-       class="w-1/2 block font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
-      Articles
-    </a>
+  <div class="fixed h-full w-1/6 sidebar">
+    <%= image_tag 'main-photo.jpg' %>
+    <% ['education', 'job experience', 'contributions', 'articles'].each do |section| %>
+      <div class="mt-5">
+        <a href="#<%= section.dasherize %>"
+           class="w-1/2 block font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+          <%= section.humanize %>
+        </a>
+      </div>
+    <% end %>
   </div>
   <div class="flex w-5/6">
 
